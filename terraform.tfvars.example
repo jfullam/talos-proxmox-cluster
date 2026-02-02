@@ -1,0 +1,37 @@
+# Proxmox Connection
+proxmox_endpoint  = "https://proxmox.example.com:8006"
+proxmox_api_token = "root@pam!terraform=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+proxmox_insecure  = true
+proxmox_node      = "pve"
+
+# Cluster Configuration
+cluster_name     = "talos-cluster"
+cluster_endpoint = "192.168.1.10"  # VIP or first control plane IP
+
+# Talos Configuration
+talos_version      = "v1.7.0"
+kubernetes_version = "1.30.0"
+
+# Control Plane Nodes
+controlplane_count     = 3
+controlplane_cores     = 2
+controlplane_memory    = 4096
+controlplane_disk_size = 50
+controlplane_ip_start  = "192.168.1.10"
+
+# Worker Nodes
+worker_count     = 3
+worker_cores     = 4
+worker_memory    = 8192
+worker_disk_size = 100
+worker_ip_start  = "192.168.1.20"
+
+# Network Configuration
+network_gateway     = "192.168.1.1"
+network_nameservers = ["8.8.8.8", "8.8.4.4"]
+network_cidr        = 24
+network_bridge      = "vmbr0"
+
+# Storage
+storage_pool = "local-lvm"
+iso_storage  = "local"
